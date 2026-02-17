@@ -1,0 +1,240 @@
+body {
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: #f4f6fb;
+    color: #1c1e21;
+}
+
+/* LOGIN */
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-card {
+    background: white;
+    padding: 45px;
+    border-radius: 20px;
+    width: 380px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+
+.login-card input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #e6e8f0;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.login-card button {
+    background: linear-gradient(90deg, #5a67ff, #5a81ff);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s ease;
+    width: 100%;
+}
+
+/* DASHBOARD LAYOUT */
+.dashboard {
+    display: flex;
+    height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 260px;
+    background: white;
+    padding: 30px;
+    border-right: 1px solid #e6e8f0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+.sidebar button {
+    width: 100%;
+    background: linear-gradient(90deg, #5a67ff, #5a81ff);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* CONTENT */
+.content {
+    flex: 1;
+    padding: 50px;
+    overflow-y: auto;
+}
+
+.content h1 {
+    margin-top: 0;
+}
+
+/* DRAG & DROP */
+.drop-zone {
+    border: 2px dashed #cbd1ff;
+    padding: 40px;
+    text-align: center;
+    border-radius: 15px;
+    background: #fafbff;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 500;
+}
+.drop-zone.dragover {
+    background: #eef0ff;
+    border-color: #5a67ff;
+}
+
+/* INPUTS */
+input[type="date"] {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #e6e8f0;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    background: linear-gradient(90deg, #5a67ff, #5a81ff);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s ease;
+    width: 100%;
+}
+button:disabled {
+    background: #a0a4ff;
+    cursor: not-allowed;
+}
+button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(90,103,255,0.3);
+}
+
+/* IMAGE GRID */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+.image-card {
+    background: white;
+    border-radius: 16px;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+.image-card:hover {
+    transform: translateY(-4px);
+}
+.image-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.image-card p {
+    margin: 10px 0;
+}
+
+.image-card button {
+    margin-top: 0;
+}
+
+.activate-btn {
+    background: linear-gradient(90deg, #5a67ff, #5a81ff);
+}
+
+.delete-btn {
+    background: #ff5a5a !important;
+}
+
+/* TV - обновленная версия */
+.tv-container {
+    background: black;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tv-image {
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+    object-fit: contain; 
+}
+
+/* Скрываем курсор на ТВ */
+.tv-container * {
+    cursor: none;
+}
+
+/* Дополнительные стили */
+.no-image {
+    color: white;
+    text-align: center;
+    margin-top: 40vh;
+    font-size: 40px;
+    font-family: Arial, sans-serif;
+}
+
+.image-card b {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.image-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.image-card {
+    animation: fadeIn 0.3s ease;
+}
+
+/* Уведомления */
+.alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    z-index: 1000;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
